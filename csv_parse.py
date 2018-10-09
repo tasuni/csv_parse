@@ -10,9 +10,9 @@ def convert2csv(filename):
 result_current_student = ""
 convert2csv(sys.argv[1])
 
-with open(sys.argv[1]) as file:
+with open(sys.argv[1] + '.csv') as file:
     reader = list(csv.reader(file))  # list where one list member comprises of one row of the csv
     # will need to think of a way to get number of subjects and subject names
-    for row in range(constants.INITIAL_ROW, len(reader), constants.ROWS_PER_PAGE):
-        for  student_row in range(0, constants.ROWS_PER_PAGE, constants.LENGTH_EACH_STUDENT):
+    for row in range(c.INITIAL_ROW, len(reader), c.ROWS_PER_PAGE):
+        for  student_row in range(0, c.ROWS_PER_PAGE, c.LENGTH_EACH_STUDENT):
             # OPERATIONS TO DO HERE

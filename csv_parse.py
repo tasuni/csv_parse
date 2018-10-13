@@ -4,12 +4,20 @@ import sys
 import constants
 import re
 
+
+def convert2csv(filename):
+    os.system(
+        f'java -jar tabula-1.0.2-jar-with-dependencies.jar -p all -a {constants.Y1},{constants.X1},{constants.Y2},{constants.X2} -o {filename}.csv {filename}.pdf')
+
+
 # will need to plugin the coordinates
 # tl =  39.6, 156.2
 # br = 936.0, 441.4
 
 # placeholder string for each student, append this to the csv in the end after all operations
 result_current_student = ""
+
+convert2csv(sys.argv[1])
 
 with open(sys.argv[1]) as file:
     reader = list(csv.reader(file))  # list where one list member comprises of one row of the csv
